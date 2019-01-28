@@ -37,7 +37,7 @@ MnasNet同样是谷歌发布的高效移动端分类网络，与Mobilenet不同�
 
 #### 3.MTCNN
 
-MTCNN是一个非常优秀的单一物体检测框架，可以用这个框架进行人脸、车辆、行人等单一物体的检测，该网络的主要问题在于单帧图像中包含多个物体时，检测速度下降严重。mtcnn的复现在github上有多个版本，包括caffe、keras、TensorFlow等，我们测试了不同版本，有一些存在问题，https://github.com/AITTSMD/MTCNN-Tensorflow 这个repo能够基本复现作者的精度。其实，mtcnn框架具有一些优化的方法和空间，包括用卷积替代polling，采用dw卷积等等，相关修改可以参考我们的文章: https://blog.csdn.net/Relocy/article/details/84075570 . 我们的工程师同样提供了一个优化的mtcnn模型：https://github.com/szad670401/Fast-MTCNN ，大家可以参考修改。
+MTCNN是一个非常优秀的单一物体检测框架，可以用这个框架进行人脸、车辆、行人等单一物体的检测，该网络的主要问题在于单帧图像中包含多个物体时，检测速度下降严重。mtcnn的复现在github上有多个版本，包括caffe、keras、TensorFlow等，我们测试了不同版本，有一些存在问题，https://github.com/AITTSMD/MTCNN-Tensorflow 这个repo能够基本复现作者的精度，训练过程中，一定要注意正负样本保持1:3的比例。其实，mtcnn框架具有一些优化的方法和空间，包括用卷积替代polling，采用dw卷积等等，相关修改可以参考我们的文章: https://blog.csdn.net/Relocy/article/details/84075570 . 我们的工程师同样提供了一个优化的mtcnn模型：https://github.com/szad670401/Fast-MTCNN ，大家可以参考修改。
 
 #### 4.MobileNet-SSD
 
@@ -58,7 +58,7 @@ VanillaCNN是针对香港中文大学人脸关键点定位网络TCDCN的一个�
 
 #### 9.DeepOCR
 
-DeepOCR这里我们泛指利用深度学习进行文字识别的方法，目前网上开源的算法较好的有 https://github.com/YCG09/chinese_ocr 以及 https://github.com/chineseocr/chineseocr ， 前一个方法利用CTPN网络作为文字检测网络，然后利用DenseNet + CTC 进行文字识别。后面的方法利用YOLOv3作文文字检测网络，利用CRNN进行文字识别。两个网络都提供了训练代码，直接使用已有的模型对黑白打印文字识别效果还可以，但是对于自然文字场景，文字颜色不为黑色的情况下，识别率较差，使用者可以利用 https://github.com/JarveeLee/SynthText_Chinese_version 这个工具生成自己需要的字体及颜色的样本，重新训练模型，取得好的效果。
+DeepOCR这里我们泛指利用深度学习进行文字识别的方法，目前网上开源的算法较好的有 https://github.com/YCG09/chinese_ocr 以及 https://github.com/chineseocr/chineseocr ， 前一个方法利用CTPN网络作为文字检测网络，然后利用DenseNet + CTC 进行文字识别。后面的方法利用YOLOv3作文文字检测网络，利用CRNN进行文字识别。两个网络都提供了训练代码，直接使用已有的模型对黑白打印文字识别效果还可以，但是对于自然文字场景，文字颜色不为黑色的情况下，识别率较差，使用者可以利用 https://github.com/yanhaiming56/SynthText_Chinese_py3 这个工具生成自己需要的字体及颜色的样本（我们观察了一下，生成的样本质量一般），或者自己标注新的数据，重新训练模型，取得好的效果。
 
 
 

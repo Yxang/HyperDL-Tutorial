@@ -7,4 +7,4 @@
 
 [1] https://zhuanlan.zhihu.com/p/55846103
 
-[2] https://blog.csdn.net/qq_34132426/article/details/81166256
+[2] https://github.com/Ewenwan/MVision/blob/master/CNN/Deep_Compression/readme.md

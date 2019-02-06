@@ -47,6 +47,8 @@ SSD是Single Shot检测网络的代表结构，其速度快，单帧物体数量
 
 #### 6.insightface
 
+insightface是一款高精度的开源人脸识别框架，在我们的测试中，insightface针对一般场景效果不错，“历史脸”效果稍差，有可能因为训练数据历史脸数据不足导致的，算法的作者guojia也将论文提交到了CVPR2019，期待他的好消息。大家可以在这里找到作者的实现：https://github.com/deepinsight/insightface 作者的框架基于MXNET，目前git上已经有基于TensorFlow、caffe等其他框架的实现，大家可以参考。大家在部署阶段，可以利用TVM部署该框架，速度快，也可以将模型转换到caffe model，部署到其他平台。TVM部署方法可以参考我们的博客：[insightface模型的TVM框架部署](https://github.com/zeusees/HyperDL-Tutorial/blob/master/5.%E6%A8%A1%E5%9E%8B%E7%9A%84%E9%83%A8%E7%BD%B2/%E5%9C%A8CPP%E4%B8%8B%E4%BD%BF%E7%94%A8TVM%E6%9D%A5%E9%83%A8%E7%BD%B2mxnet%E6%A8%A1%E5%9E%8B%EF%BC%88%E4%BB%A5Insightface%E4%B8%BA%E4%BE%8B%EF%BC%89.md)
+
 #### 7.VanillaCNN
 
 VanillaCNN是针对香港中文大学人脸关键点定位网络TCDCN的一个复现，大家可以参考 https://github.com/ishay2b/VanillaCNN 。稠密人脸关键点定位(通常关键点50点以上)同样是一个回归问题，让网络能够通过对人脸边缘特征的提取，回归出准确的定位，这篇文章采用了多任务进行定位，取得了很好的效果，后来几年的的很多算法，在准确度上有提升，但是在速度上不具有优势。大家可以利用高效的网络结构提取特征并加速，取得更好的人脸关键点定位准确度和速度。大家在训练关键点定位的网络时，可以结合可视化的技术，将网络后面基层的feature map显示出来，观察网络对输入人脸边缘提取的效果，改进网络结构。

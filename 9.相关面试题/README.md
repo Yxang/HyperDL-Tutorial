@@ -61,8 +61,9 @@
 
    在一些研究成果中，作者通过实验表明：人脸在不同的区域存在不同的特征（眼睛／鼻子／嘴的分布位置相对固定），当不存在全局的局部特征分布时，Local-Conv更适合特征的提取。
 
-##### 8.不同的权值初始化方式以及其造成的后果?为什么会造成这样的结果?
+##### 8.神经网络权值初始化方式以及不同方式的区别?
 
+   权值初始化的方法主要有：常量初始化（constant）、高斯分布初始化（gaussian）、positive_unitball初始化、均匀分布初始化（uniform）、xavier初始化、msra初始化、双线性初始化（bilinear）
 
 ##### 9.Convolution、 pooling、 Normalization是卷积神经网络中十分重要的三个步骤，分别简述Convolution、 pooling和Normalization在卷积神经网络中的作用。
 

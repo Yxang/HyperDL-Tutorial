@@ -46,9 +46,13 @@ Insightface: https://github.com/deepinsight/insightface
 
 #### 2. 文字识别
 
-DeepOCR: https://github.com/JinpengLI/deep_ocr
-
 CTPN: https://github.com/tianzhi0549/CTPN (文字定位)
+
+EAST: https://github.com/argman/EAST (文字定位)
+
+AdvancedEAST: https://github.com/huoyijie/AdvancedEAST (文字定位)
+
+DeepOCR: https://github.com/JinpengLI/deep_ocr
 
 DenseNet + CTC: https://github.com/YCG09/chinese_ocr
 

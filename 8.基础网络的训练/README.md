@@ -13,7 +13,7 @@
 
 4.MobileNet-SSD(Single Shot 物体检测网络)
 
-5.ArcFace(人脸识别网络)
+5.CTPN(文字定位网络)
 
 6.insightface(人脸识别网络)
 
@@ -43,7 +43,7 @@ MTCNN是一个非常优秀的单一物体检测框架，可以用这个框架进
 
 SSD是Single Shot检测网络的代表结构，其速度快，单帧物体数量对检测速度影响不大，具有很好的工程化指导作用。Mobilenet跟SSD的结合，更能够提高网络的速度。Mobilenet-SSD可以参考：https://github.com/chuanqi305/MobileNet-SSD 这里有数据准备代码，以及网络的训练测试代码。我们采用这个网络进行了车牌检测的实验，效果也不错，能够完成单层、双层、蓝牌、黄牌、绿牌的检测，可以参见我们的博客：https://blog.csdn.net/lsy17096535/article/details/78687728 ，我们开源的车牌检测Mobilenet-SSD模型：https://github.com/zeusees/Mobilenet-SSD-License-Plate-Detection
 
-#### 5.ArcFace
+#### 5.CTPN
 
 #### 6.insightface
 

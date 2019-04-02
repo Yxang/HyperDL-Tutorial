@@ -160,6 +160,12 @@
 
     1.参考论文: Fully Convolutional Networks for Semantic Segmentation
 
+##### 23.SSD和YOLO的区别
+
+
+##### 24.交叉熵和softmax，还有它的BP
+
+
 #### 实践部分
 
 
@@ -180,7 +186,16 @@
 
 4.计算空洞卷积的感受野
 
+5.mAP的计算
+
+6.Python tuple和list的区别
+
+7.Python的多线程和多进程，Python伪多线程，什么时候应该用它
+
+8.tensorflow while_loop和python for循环的区别，什么情况下for更优？
     
+    while loop的循环次数不确定的情况下效率低，因为要不断重新建图
+
 #### 参考文献
 
 [1] https://blog.csdn.net/u014722627/article/details/77938703

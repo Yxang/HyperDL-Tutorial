@@ -2,6 +2,8 @@
 
 由于各种深度学习框架的层出不穷，我们在进行算法开发到算法部署的过程中，往往都需要用到不同的框架。例如我们很有可能使用tensorflow,pytorch等进行算法开发和调试，在早期工程inference的时候我们往往使用较为轻量的caffe或者魔改后的caffe。到了移动端部署我们可能会使用feather CNN nihui的NCNN或者小米的mace等框架。facebook ONNX的出现为模型的转换提供了一种思路，但除了pytorch等框架能很好的支持ONNX。其他等框架并未很好的对接ONNX。在[MMdnn](https://github.com/Microsoft/MMdnn)出现之前，大家都把caffemodel作为一个中间体来进行转换。
 
+我们会逐步讲一下转换工具，包括MMdnn,keras2onnx,keras2caffe,tf2coreml,coreml2onnx,mxnet2caffe等。我们利用这些工具大多数用来转到onnx或者caffe，利于模型在移动端部署，无论转到ncnn，mace，都是比较方便的中间模型。
+
 其实就模型转换而言只是个填参数的过程，把模型结构搭好，把参数填进去就即可，但是实践过的朋友大家一定会知道这其中存在不少坑，但是我们更希望有一种自动化的模型转换方案来进行模型转换。
 
 [MMdnn](https://github.com/Microsoft/MMdnn)的出现为模型转换带来了不少的福音，[MMdnn](https://github.com/Microsoft/MMdnn)提供了一种IR(中间表示)来来衔接各个模型之间的转换。他囊括并支持了主流的DNN框架。

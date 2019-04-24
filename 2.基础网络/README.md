@@ -83,3 +83,6 @@ MobileNet V2是之前MobileNet V1的改进版。MobileNet V1中主要是引入�
 总结：利用两个网络对抗生成模型，生成器与辨别器，生成器输入图像，生成所需图像，辨别器辨别所需图像与生成图像，使生成器的生成图像骗过辨别器。
 
 
+### 7.DenseNet
+
+CVPR17 的Best Paper，模型体积小，准确率高。我们利用densenet + ctc进行进行OCR文字识别训练，效果不错。比基于resnet、vgg等基础网络的ocr效果好。

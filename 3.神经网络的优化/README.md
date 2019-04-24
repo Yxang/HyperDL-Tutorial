@@ -11,6 +11,8 @@
 
 #### 1.准确率的优化
 
+主要优化方法有：数据增强(Data Augmentation)，权重初始化(weight initialization)，随机梯度下降法（Stochastic Gradient descent），批规范化（Batch normalization) ，Dropout 等。
+
 简单的思想，我们可以采用高准确率的模型，例如任务准确率在VGG16上不高，那我们可以采用Resnet50，densenet121等。这是一个再简单不过的做法，但是在特定模型下，针对具体任务，同样具有很多的优化方式。
 
 模型合适的初始化参数设置，当我们从0开始训练一个模型的时候，选择合适的初始化参数方式，对后续的准确率具有一定影响，这个可以根据实验、经验测试选择。

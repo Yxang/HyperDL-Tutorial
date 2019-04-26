@@ -63,3 +63,8 @@ mmtomodel -f caffe -in pnet -iw pnet.npy -o pnet
 ### 3.tf2coreml
 
 ### 4.mxnet2caffe
+
+### 5.tf2ncnn
+
+ncnn作为开源中较为流行的移动端前向计算框架，我们在训练完模型后，需要将对应的模型转换的ncnn支持的模型，ncnn提供了onnx2ncnn，caffe2ncnn，tf2ncnn，等工具，在我们测试用，caffe2ncnn与onnx2ncnn支持较好，绝大多数模型都可以部署，但是很多时候使用者喜欢用keras或者tf作为训练框架，这时我们要做tf到ncnn的转换，特别是一些特殊层的处理，这里我们给出一些参考方式。
+

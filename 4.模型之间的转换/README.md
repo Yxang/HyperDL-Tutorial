@@ -68,3 +68,10 @@ mmtomodel -f caffe -in pnet -iw pnet.npy -o pnet
 
 ncnn作为开源中较为流行的移动端前向计算框架，我们在训练完模型后，需要将对应的模型转换的ncnn支持的模型，ncnn提供了onnx2ncnn，caffe2ncnn，tf2ncnn，等工具，在我们测试用，caffe2ncnn与onnx2ncnn支持较好，绝大多数模型都可以部署，但是很多时候使用者喜欢用keras或者tf作为训练框架，这时我们要做tf到ncnn的转换，特别是一些特殊层的处理，这里我们给出一些参考方式。
 
+如果采用keras训练模型，可以先用keras2onnx将模型转到onnx，然后再利用ncnn提供的onnx2ncnn转化到ncnn的模型。
+
+对于tf训练的模型，可以参考：https://github.com/Tencent/ncnn/issues/5#issuecomment-472258072 ，这种方式同样可以解决模型转换的问题。
+
+模型转换的一些难点主要在dw卷积的转化，relu6的设置等。
+
+

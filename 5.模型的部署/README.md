@@ -5,7 +5,7 @@
 
 #### ---------------- 2018.12.07 分割线  ----------------
 
-各大公司开源了自己的移动端深度学习框架，其中包括TensorFlow Lite、Caffe2、MACE、paddle-mobile(MDL)、FeatherCNN、NCNN等。我们参考开源的测试结果，结合自己整理的数据，针对主流的异动单深度学习框架进行简单对比及介绍。
+各大公司开源了自己的移动端深度学习框架，其中包括TensorFlow Lite、Caffe2、MACE、paddle-mobile(MDL)、FeatherCNN、NCNN等。我们参考开源的测试结果，结合自己整理的数据，针对主流的移动端深度学习框架进行简单对比及介绍。
 
 
 | 框架 | 机构 | 支持平台 | Stars | Forks | 

@@ -70,4 +70,19 @@ MobileNet V2是之前MobileNet V1的改进版。MobileNet V1中主要是引入�
 
 [轻量化网络：MobileNet-V2](https://blog.csdn.net/u011995719/article/details/79135818)
 
+### 5. U-NET
 
+[论文地址](http://arxiv.org/abs/1505.04597)
+
+[项目地址](https://lmb.informatik.uni-freiburg.de/people/ronneber/u-net/)
+
+这是Encoder-Decoder网络的一种，在无监督学习中的框架，利用conv与deconv降维升维来进行学习，分别叫做encoder与decoder编码解码，一般基于卷积网络，encoder后相当于学习到了特征，而decoder后相当于还原了图像，既可以用输入图像进行训练，训练好一层加深一层。再可以利用有监督微调，从而达到分类或者图像转换的目的。
+
+### 6. GAN
+
+总结：利用两个网络对抗生成模型，生成器与辨别器，生成器输入图像，生成所需图像，辨别器辨别所需图像与生成图像，使生成器的生成图像骗过辨别器。
+
+
+### 7.DenseNet
+
+CVPR17 的Best Paper，模型体积小，准确率高。我们利用densenet + ctc进行进行OCR文字识别训练，效果不错。比基于resnet、vgg等基础网络的ocr效果好。

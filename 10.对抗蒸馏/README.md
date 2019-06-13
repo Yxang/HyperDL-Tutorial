@@ -19,7 +19,7 @@
 
 我个人认为降低小网络的loss主要有两种方式：
 
-**1、提高效果的模型体积，**如FPN，DLA，shortcut，concat 等等。不过当模型体积增大到一定程度，他所能得到的收益也越小，比如可以观看gluoncv官网的log。faster_rcnn+fpn+resnet101就比faster_rcnn+resnet101的loss低一点点,当然效果也就提升一点点。而faster_rcnn+fpn+resnet50就比faster_rcnn+resnet50的loss低很多,当然效果也就提升也高了很多。
+**1、提高效果的模型体积**，如FPN，DLA，shortcut，concat 等等。不过当模型体积增大到一定程度，他所能得到的收益也越小，比如可以观看gluoncv官网的log。faster_rcnn+fpn+resnet101就比faster_rcnn+resnet101的loss低一点点,当然效果也就提升一点点。而faster_rcnn+fpn+resnet50就比faster_rcnn+resnet50的loss低很多,当然效果也就提升也高了很多。
 
 **2、改变训练方式**，比如很早提出的知识蒸馏，2018年的cascade rcnn和snip,以及2019年的各种anchor free，都是改变训练方式，虽然他们的动机各不相同，但是我觉得大部分都是进一步降低loss，提高模型的效果。
 

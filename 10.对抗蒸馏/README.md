@@ -23,13 +23,13 @@
 
 **2、改变训练方式**，比如很早提出的知识蒸馏，2018年的cascade rcnn和snip,以及2019年的各种anchor free，都是改变训练方式，虽然他们的动机各不相同，但是我觉得大部分都是进一步降低loss，提高模型的效果。
 
-​        第一种方式对于个人觉得对于做模型压缩的人来说不太可取，而第二种方式才是主要考虑方向。对于改变训练方式的方法，读者可以参看我的上一篇文章https://zhuanlan.zhihu.com/p/64138476，对抗蒸馏，使用对抗生成网络和cosine attention的机制，将大网络的知识迁移到小网络，进一步降低小网络最终的收敛loss。目前开放的使用ssd_resnet50作为teacher net ssd_mobilenet作为student net在voc数据集上将**ssd_mobilenet**的**CrossEntropy**和**SmoothL1**最终收敛到1.388+ 0.659+，mAP达到78.2+，而**原始ssd_mobilenet**在voc上的**CrossEntropy**和**SmoothL1**最终收敛到1.962+ 0.944+，**mAP**达到75.4，由于gpu资源限制目前在coco上还没训练完。训练log地址为，https://github.com/p517332051/GAN-Knowledge-Distillation-SSD/blob/master/ssd_512_mobilenet1_0_resnet50_v1_voc_g_d_new_train.log。
+​        第一种方式对于个人觉得对于做模型压缩的人来说不太可取，而第二种方式才是主要考虑方向。对于改变训练方式的方法，读者可以参看我的上一篇文章[https://zhuanlan.zhihu.com/p/64138476](https://zhuanlan.zhihu.com/p/64138476)对抗蒸馏，使用对抗生成网络和cosine attention的机制，将大网络的知识迁移到小网络，进一步降低小网络最终的收敛loss。目前开放的使用ssd_resnet50作为teacher net ssd_mobilenet作为student net在voc数据集上将**ssd_mobilenet**的**CrossEntropy**和**SmoothL1**最终收敛到1.388+ 0.659+，mAP达到78.2+，而**原始ssd_mobilenet**在voc上的**CrossEntropy**和**SmoothL1**最终收敛到1.962+ 0.944+，**mAP**达到75.4，由于gpu资源限制目前在coco上还没训练完。训练log地址为，[https://github.com/p517332051/GAN-Knowledge-Distillation-SSD/blob/master/ssd_512_mobilenet1_0_resnet50_v1_voc_g_d_new_train.log](https://github.com/p517332051/GAN-Knowledge-Distillation-SSD/blob/master/ssd_512_mobilenet1_0_resnet50_v1_voc_g_d_new_train.log)。
 
 ​       通过这种方法，我发现小网络并非不是不可以继续收敛，而是训练方式得到改善自然可以继续降低他的loss，而随之loss降低，网络的效果可以进一步提升。期望我的方法能起到抛砖引玉的效果，能推动学术界和工业界神经网络压缩的工作的进展。
 
 
 
-知乎链接https://zhuanlan.zhihu.com/p/68563369。
+知乎链接[https://zhuanlan.zhihu.com/p/68563369](https://zhuanlan.zhihu.com/p/68563369)
 
 ## 参考
 

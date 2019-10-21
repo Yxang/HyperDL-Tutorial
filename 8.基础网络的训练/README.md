@@ -55,22 +55,8 @@ VanillaCNN是针对香港中文大学人脸关键点定位网络TCDCN的一个�
 
 #### 8.YOLO-V3
 
-通用物体检测近年来也是研究人员关注的人们领域，从RBG、何凯明大神的RCNN，Fast RCNN，Faster RCNN，MASK RCNN等，Single Shot的Yolo系列、SSD等，以后后来的RetinaNet，我们对这一系列的网络都进行过测试，由于我们算法组在日常使用中主要考虑移动端的部署以及服务器端的效率，推荐了MobileNet-SSD跟YOLO-V
-3。我们对3000张行车记录仪标注图像以及2000张交通监控图片进行标注，分别在以上网络进行了测试，对于我们的图片，YOLO-V3表现最好，速度也是最快的一档。项目主页：https://pjreddie.com/darknet/yolo/ 
+通用物体检测近年来也是研究人员关注的人们领域，从RBG、何凯明大神的RCNN，Fast RCNN，Faster RCNN，MASK RCNN等，Single Shot的Yolo系列、SSD等，以后后来的RetinaNet，我们对这一系列的网络都进行过测试，由于我们算法组在日常使用中主要考虑移动端的部署以及服务器端的效率，推荐了MobileNet-SSD跟YOLO-V3。我们对3000张行车记录仪标注图像以及2000张交通监控图片进行标注，分别在以上网络进行了测试，对于我们的图片，YOLO-V3表现最好，速度也是最快的一档。项目主页：https://pjreddie.com/darknet/yolo/ 
 
 #### 9.DeepOCR
 
 DeepOCR这里我们泛指利用深度学习进行文字识别的方法，目前网上开源的算法较好的有 https://github.com/YCG09/chinese_ocr 以及 https://github.com/chineseocr/chineseocr ， 前一个方法利用CTPN网络作为文字检测网络，然后利用DenseNet + CTC 进行文字识别。后面的方法利用YOLOv3作文文字检测网络，利用CRNN进行文字识别。两个网络都提供了训练代码，直接使用已有的模型对黑白打印文字识别效果还可以，但是对于自然文字场景，文字颜色不为黑色的情况下，识别率较差，使用者可以利用 https://github.com/yanhaiming56/SynthText_Chinese_py3 这个工具生成自己需要的字体及颜色的样本（我们观察了一下，生成的样本质量一般），或者自己标注新的数据，重新训练模型，取得好的效果。
-
-
-
-
-
-
-
-
-
-
-
-
-

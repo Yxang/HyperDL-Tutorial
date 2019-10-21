@@ -1,7 +1,3 @@
-
-
-
-
 # 你的神经网络真的收敛了么？
 
 ***1、为什么小模型的作为backbone效果会差？***
@@ -35,6 +31,3 @@
 
 1. [^](https://zhuanlan.zhihu.com/p/68563369#ref_83831_1_0)https://raw.githubusercontent.com/dmlc/web-data/master/gluoncv/logs/detection/ssd_512_mobilenet1_0_coco_train.log
 2. ^[a](https://zhuanlan.zhihu.com/p/68563369#ref_83831_2_0)[b](https://zhuanlan.zhihu.com/p/68563369#ref_83831_2_1)https://raw.githubusercontent.com/dmlc/web-data/master/gluoncv/logs/detection/ssd_512_resnet50_v1_coco_train.log
-
-
-

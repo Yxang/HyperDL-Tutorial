@@ -3,19 +3,20 @@
 深度学习发展很快，最近又出现了几个新的移动端前向框架，例如[Tengine](https://github.com/OAID/Tengine)和 [TVM](https://github.com/dmlc/tvm).
 我们还没有对这两个框架进行深入研究，但是在对应的wiki中，可以看到这两个框架的速度对于现有框架都具有一定优势，通过短暂的了解，Tengine还是很不错的，支持op跟模型种类都比较丰富，还支持GPU运算。感兴趣的读者可以多了解一下。
 
-#### ---------------- 2018.12.07 分割线  ----------------
+#### ---------------- 2019.10.16 分割线  ----------------
 
 各大公司开源了自己的移动端深度学习框架，其中包括TensorFlow Lite、Caffe2、MACE、paddle-mobile(MDL)、FeatherCNN、NCNN等。我们参考开源的测试结果，结合自己整理的数据，针对主流的移动端深度学习框架进行简单对比及介绍。
 
 
-| 框架 | 机构 | 支持平台 | Stars | Forks | 
+| 框架 | 机构 | 支持平台 | Stars | Forks |
 | --------------------------------------------------------- | ----------- | -------------- | ---------- | ----- |
-| [Caffe2](https://github.com/caffe2/caffe2)                | Facebook    | ARM            |    8270*   | 2080* |
+| [Caffe2](https://github.com/caffe2/caffe2)                | Facebook    | ARM            |    ![](https://img.shields.io/github/stars/caffe2/caffe2.svg)   | ![](https://img.shields.io/github/forks/caffe2/caffe2.svg) |
 | [TF_lite](https://github.com/tensorflow)                  | Google      | ARM            |     *      |   *   |
-| [MACE](https://github.com/XiaoMi/mace)                    | Xiaomi      | ARM/DSP/GPU    |    2442    |  412  |
-| [paddle-mobile](https://github.com/PaddlePaddle/paddle-mobile)      | Baidu       | ARM/GPU        |    4038    |  774  |
-| [FeatherCNN](https://github.com/Tencent/FeatherCNN)       | Tencent     | ARM            |    658     |  170  |
-| [NCNN](https://github.com/Tencent/ncnn)                   | Tencent     | ARM            |    4606    | 1163  |
+| [MACE](https://github.com/XiaoMi/mace)                    | Xiaomi      | ARM/DSP/GPU    |    ![](https://img.shields.io/github/stars/XiaoMi/mace.svg)   | ![](https://img.shields.io/github/forks/XiaoMi/mace.svg) |
+| [paddle-mobile](https://github.com/PaddlePaddle/paddle-mobile)      | Baidu       | ARM/GPU        |    ![](https://img.shields.io/github/stars/PaddlePaddle/paddle-mobile.svg)   | ![](https://img.shields.io/github/forks/PaddlePaddle/paddle-mobile.svg) |
+| [FeatherCNN](https://github.com/Tencent/FeatherCNN)       | Tencent     | ARM            |    ![](https://img.shields.io/github/stars/Tencent/FeatherCNN.svg)   | ![](https://img.shields.io/github/forks/Tencent/FeatherCNN.svg) |
+| [NCNN](https://github.com/Tencent/ncnn)                   | Tencent     | ARM/GPU           |    ![](https://img.shields.io/github/stars/Tencent/ncnn.svg)   | ![](https://img.shields.io/github/forks/Tencent/ncnn.svg) |
+| [MNN](https://github.com/alibaba/MNN)                   | Alibaba     | ARM/GPU           |    ![](https://img.shields.io/github/stars/alibaba/MNN.svg)   | ![](https://img.shields.io/github/forks/alibaba/MNN.svg) |
 
 
 ###  二、性能对比 (截至2018.09)
@@ -24,34 +25,34 @@
 
 **CPU：kryo&2.15GHz*2  (ms)**  
 
-| 框架    | SqueezeNet_v1.1 | MobileNet_v1  | ResNet18 
+| 框架    | SqueezeNet_v1.1 | MobileNet_v1  | ResNet18
 | --------------- | :------------------:  | :------------------:  | :-----:|
 | NCNN            | 47.64                 | 68.71                 | 142.28 |
 | FeatherCNN      | 36.39                 | 58.92                 | 100.13 |
 | MACE            | 42.37                 | 65.18                 | 160.7  |
 
 
-#### 2. paddle-mobile (MDL)
+#### 2. paddle-mobile (MDL) (截至2019.10)
 
 **CPU：高通835  (ms)**  
 
-| 框架             | squeezenet | mobilenet_v1 | googlenet_v1
-| ---------------- | :--------: | :----------: | :----------: |
-| 1 Thread         | 82.41      | 105.43       | 341.25       |
-| 2 Threads        | 56.17      | 62.75        | 233.35       |
-| 4 Threads        | 36.45      | 37.13        | 158.55       |
+| 框架             | squeezenet_v1.1 | mobilenet_v1 | mobilenet_v2 | shufflenet_v2
+| ---------------- | :--------: | :----------: | :----------: | :----------: |
+| 1 Thread         | 74.87      | 96.11        | 64.04        |  31.71  |
+| 2 Threads        | 40.96      | 53.18        | 36.85        |  19.52  |
+| 4 Threads        | 23.69      | 31.99        | 23.10        |  13.25  |
 
 
 ### 三、框架评价
 
 | 框架  |集成成本| 库文件大小 | 模型支持程度 | 文档完整程度 | 速度 |
-| ------------------ | :----: | :-----: | :----: | :-----: | :----: | 
-| caffe2             | 一般   | 良好    | 优秀   | 良好    | 一般   | 
-| TF_Lite            | 一般   | 良好    | 优秀   | 良好    | 优秀   | 
-| MACE               | 良好   | 优秀    | 良好   | 良好    | 优秀   | 
-| MDL                | 优秀   | 优秀    | 良好   | 良好    | 良好   | 
+| ------------------ | :----: | :-----: | :----: | :-----: | :----: |
+| caffe2             | 一般   | 良好    | 优秀   | 良好    | 一般   |
+| TF_Lite            | 一般   | 良好    | 优秀   | 良好    | 优秀   |
+| MACE               | 良好   | 优秀    | 良好   | 良好    | 优秀   |
+| MDL                | 优秀   | 优秀    | 良好   | 良好    | 良好   |
 | FeatherCNN         | 良好   | 优秀    | 良好   | 良好    | 优秀   |
-| NCNN               | 优秀   | 优秀    | 良好   | 优秀    | 优秀   | 
+| NCNN               | 优秀   | 优秀    | 良好   | 优秀    | 优秀   |
 
 
 ### 四、几款移动端深度学习框架分析
@@ -69,7 +70,7 @@ ncnn开源早点，文档、相关代码丰富一些，使用者相对多一些�
 
 
 #### 2.百度的 paddle-mobile(MDL)
- 
+
 MDL可以支持CPU和GPU，FPGA在开发中。
 
 #### 3.小米的 MACE
